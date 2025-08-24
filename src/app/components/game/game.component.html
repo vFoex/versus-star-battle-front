@@ -1,0 +1,25 @@
+<div>
+    <h1>Star Battle Game</h1>
+</div>
+
+<div class="grid-div">
+    @if (grid) {
+        <div class="grid">
+            <div class="row" *ngFor="let row of grid.cells">
+                <div class="cell" *ngFor="let cell of row"
+                [style.backgroundColor]="cell.regionColor"
+                (click)="cellClicked(cell)">
+                @if(cell.content === 'cross') {
+                    <mat-icon>clear</mat-icon>
+                } @else if (cell.content === 'star') {
+                    <mat-icon>star</mat-icon>
+                }
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="actions-div">
+        <button mat-raised-button color="primary" (click)="startNewGame()">Start New Game</button>
+    </div>
+</div>
