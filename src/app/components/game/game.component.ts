@@ -22,7 +22,7 @@ export class GameComponent implements OnInit {
     gameSessionId: string;
 
     ngOnInit(): void {
-        
+        this.startGame();
     }
 
     cellClicked(cell: GridCell): void {
